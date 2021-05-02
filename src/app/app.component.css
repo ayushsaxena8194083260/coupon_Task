@@ -1,0 +1,77 @@
+
+form label {
+	font-size:14px;
+	color:darkgray;
+	cursor:pointer;
+}
+
+form label,
+form input {
+	float:left;
+	clear:both;
+}
+
+form select {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb;
+	border-radius:20px;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+
+form input {
+	margin:15px 0;
+	padding:15px 10px;
+	width:100%;
+	outline:none;
+	border:1px solid #bbb ;
+	border-radius:20px;
+	display:inline-block;
+	-webkit-box-sizing:border-box;
+	   -moz-box-sizing:border-box;
+	        box-sizing:border-box;
+    -webkit-transition:0.2s ease all;
+	   -moz-transition:0.2s ease all;
+	    -ms-transition:0.2s ease all;
+	     -o-transition:0.2s ease all;
+	        transition:0.2s ease all;
+}
+form input[type=text]:focus,
+form input[type="password"]:focus {
+	border-color:cornflowerblue;
+}
+
+
+header{
+  border: 1px solid #bbb;
+    padding: 10px;
+    margin-bottom: 45px;
+    font-size: 20px;
+    background: aliceblue;
+    /* border-radius: 15px; */
+}
+
+.section2{
+  border: 1px solid #bbb;
+   
+}
+
+.inline-section{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+
+
+/* --------------------------------------------------- */

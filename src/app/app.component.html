@@ -1,0 +1,132 @@
+<div class="container-fluid">
+  <div class="header">
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#">Add Coupon</a>
+    </nav>
+  </div>
+  <div class="screen">
+    <main role="main" class="col-md-7 mx-auto col-lg-8">
+      <div class="px-4">
+        <form [formGroup]="couponForm" (ngSubmit)="createCoupon()">
+          <div class="row my-5">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="username">Coupon Type*</label> <br>
+                  <select formControlName="couponType">
+                    <option>Online Coupon  </option>                     
+                    <option>Store Coupon  </option>                     
+                    <option>Welcome Coupon  </option>                     
+                   
+                  </select>
+                  <div>
+                    <show-errors [control]="couponForm.controls.couponType"></show-errors> <br>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <label for="username">Coupon Code*</label> <br>
+                  <input type="text" id="couponCode" name="couponCode" placeholder="Type in your Coupon code.."
+                    autocomplete="off" formControlName="couponCode" />
+                  <div>
+                    <show-errors [control]="couponForm.controls.couponCode"></show-errors> <br>
+
+                  </div>
+
+                </div>
+                <div class="col-md-6">
+                  <label for="username">start Date*</label> <br>
+                  <input type="date" id="startDate" name="startDate" autocomplete="off" formControlName="startDate" />
+                  <div>
+                    <show-errors [control]="couponForm.controls.startDate"></show-errors> <br>
+
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="username">End Date*</label> <br>
+                  <input type="date" id="endDate" name="endDate" autocomplete="off" formControlName="endDate" />
+                  <div>
+                    <show-errors [control]="couponForm.controls.endDate"></show-errors> <br>
+
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="username">Coupon Availibilty*</label> <br>
+                  <select formControlName="couponAvailibilty">
+                    <option>Is Unlimited</option>
+                    <option>One Month</option>
+                  </select>
+                  <div>
+                    <show-errors [control]="couponForm.controls.couponAvailibilty"></show-errors> <br>
+                  </div>
+                </div>
+                <div formArrayName="rules">
+                  <div class="section2 mt-4" *ngFor="let u of rulesFormGroup.controls; let i = index ">
+                    <div [formGroupName]="i">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <header>Rule</header>
+                        </div>
+                        <div class="inline-section">
+                          <div class="col-md-12">
+                            <div class="row">
+                              <div class="col-md-6">
+                                <label for="minDiscount">Min Discount*</label><br>
+                                <input type="text" id="minDiscount" name="minDiscount" placeholder="Min Discount*"
+                                  formControlName="minDiscount" />
+                                <div>
+                                  <show-errors [control]="getContactsFormGroup(i).controls['minDiscount']"></show-errors> <br>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <label for="maxDiscount">Max Discount*</label><br>
+                                <input type="text" id="maxDiscount" name="maxDiscount" placeholder="Max Discount*."
+                                  formControlName="maxDiscount" />
+                                <div>
+                                  <show-errors [control]="getContactsFormGroup(i).controls['maxDiscount']"></show-errors> <br>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <label for="discountType">Discount Type*</label><br>
+                                <select formControlName="discountType">
+                                  <option>Percentage</option>
+                                  <option>Flat</option>
+                                </select>
+                                <div>
+                                  <show-errors [control]="getContactsFormGroup(i).controls['discountType']"></show-errors> <br>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <label for="username">Discount Amount*</label><br>
+                                <input type="text" id="discountAmount" name="discountAmount"
+                                  placeholder="Discount Amount*" autocomplete="off" formControlName="discountAmount" />
+                                <div>
+                                  <show-errors [control]="getContactsFormGroup(i).controls['discountAmount']"></show-errors> <br>
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                <label for="username">Max Discount Amount*</label> <br>
+                                <input type="text" id="username" name="username" placeholder="Max Discount Amount*"
+                                  autocomplete="off" formControlName="maxDiscountAmount" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <span style="cursor: pointer; position: absolute; right: 5px;"><i class="fa fa-plus-circle"></i><a
+                      (click)="addForm()">Add Rule </a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</div>
+
+{{ this.couponForm.value | json }}
